@@ -1,21 +1,7 @@
-import type { Server } from "bun"
+import { Elysia } from 'elysia'
 
-export default {
-  async fetch(request: Request, server: Server) {
-    let text = "Hello from Bun on Vercel!\n"
+export const app = new Elysia()
+	.get('/', () => 'Hello Elysia')
+	.listen(3000)
 
-    text += `\nurl: ${request.url}\n`
-
-    for (const [key, value] of request.headers.entries()) {
-      if (!key.startsWith("x-vercel")) continue
-      text += `\n${key}: ${value}`
-    }
-
-    return new Response(text, {
-      status: 200,
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8",
-      },
-    })
-  },
-}
+console.log(`🦊 Elysia is running at on port ${app.server?.port}...`)

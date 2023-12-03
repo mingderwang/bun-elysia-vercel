@@ -3,8 +3,10 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
+    "dev": "bun run --watch ./src/main.ts",
     "start": "bun run ./src/main.ts",
-    "build": "bun-vercel ./src/main.ts"
+    "build": "bun-vercel ./src/main.ts",
+    "test": "bun test"
   },
   "devDependencies": {
     "bun-vercel": "^1.0.0-alpha.5",
@@ -14,6 +16,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "bun": "^1.0.15"
+    "bun": "^1.0.15",
+    "elysia": "^0.7.29"
   }
 }
