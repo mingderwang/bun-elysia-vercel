@@ -7,7 +7,7 @@ services:
     # override default entrypoint allows us to do `bun install` before serving
     entrypoint: []
     # execute bun install before we start the dev server in watch mode
-    command: "/bin/sh -c 'bun install && bun run --watch src/index.ts'"
+    command: "/bin/sh -c 'bun install && bun run --watch src/main.ts'"
     # expose the right ports
     ports: ["3000:3000"]
     # setup a host mounted volume to sync changes to the container

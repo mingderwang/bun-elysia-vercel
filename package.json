@@ -1,11 +1,16 @@
 {
   "name": "bun-on-vercel",
   "module": "index.ts",
+  "version": "0.0.1",
+  "private": true,
   "type": "module",
+  "bin": {
+    "my-bun-cli": "out/main.js"
+  },
   "scripts": {
     "dev": "bun run --watch ./src/main.ts",
     "start": "bun run ./src/main.ts",
-    "build": "bun-vercel ./src/main.ts",
+    "build": "bun build ./src/main.ts --outdir ./out",
     "test": "bun test"
   },
   "devDependencies": {
@@ -17,6 +22,7 @@
   },
   "dependencies": {
     "bun": "^1.0.15",
+    "bun-on-vercel": "link:bun-on-vercel",
     "elysia": "^0.7.29"
   }
 }
