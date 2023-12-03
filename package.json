@@ -1,0 +1,19 @@
+{
+  "name": "bun-on-vercel",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun run ./src/main.ts",
+    "build": "bun-vercel ./src/main.ts"
+  },
+  "devDependencies": {
+    "bun-vercel": "^1.0.0-alpha.5",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "bun": "^1.0.15"
+  }
+}
